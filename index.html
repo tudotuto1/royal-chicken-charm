@@ -3,20 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
-    <title>Lovable App</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>Royal Chicken BBQ | Best Grilled Chicken in Ottawa</title>
+    <meta name="description" content="Royal Chicken BBQ — Authentic grilled chicken & BBQ at 197 Bank St, Ottawa. Smoky flavours, bold spices. Rated 4.9/5. Takeout & delivery. Call (613) 231-3010." />
+    <meta name="author" content="Royal Chicken BBQ" />
+    <link rel="canonical" href="https://royalchickenbbq.ca" />
 
-    <!-- TODO: Update og:title to match your application name -->
-    <meta property="og:title" content="Lovable App" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Royal Chicken BBQ | Best Grilled Chicken in Ottawa" />
+    <meta property="og:description" content="Authentic grilled chicken & BBQ at 197 Bank St, Ottawa. Rated 4.9/5 by 63 customers. Takeout & delivery available." />
+    <meta property="og:type" content="restaurant" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:locale" content="en_CA" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:title" content="Royal Chicken BBQ | Ottawa" />
+    <meta name="twitter:description" content="Best grilled chicken & BBQ in Ottawa. 197 Bank St. Call (613) 231-3010." />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="geo.region" content="CA-ON" />
+    <meta name="geo.placename" content="Ottawa" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Royal Chicken BBQ",
+      "image": "",
+      "url": "https://royalchickenbbq.ca",
+      "telephone": "+1-613-231-3010",
+      "priceRange": "$10–$20",
+      "servesCuisine": ["BBQ", "Grilled Chicken", "African"],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "197 Bank St",
+        "addressLocality": "Ottawa",
+        "addressRegion": "ON",
+        "postalCode": "K2P 0A6",
+        "addressCountry": "CA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 45.4168,
+        "longitude": -75.6935
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "63"
+      },
+      "openingHoursSpecification": [
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "11:00", "closes": "21:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "11:00", "closes": "23:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "16:00", "closes": "22:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "15:00", "closes": "21:00"}
+      ],
+      "hasMenu": {
+        "@type": "Menu",
+        "hasMenuSection": {
+          "@type": "MenuSection",
+          "name": "Specialties",
+          "hasMenuItem": [
+            {"@type": "MenuItem", "name": "BBQ Platter", "offers": {"@type": "Offer", "price": "18.99", "priceCurrency": "CAD"}},
+            {"@type": "MenuItem", "name": "Jollof Rice & Chicken", "offers": {"@type": "Offer", "price": "14.99", "priceCurrency": "CAD"}},
+            {"@type": "MenuItem", "name": "Whole Roast Chicken", "offers": {"@type": "Offer", "price": "19.99", "priceCurrency": "CAD"}}
+          ]
+        }
+      }
+    }
+    </script>
   </head>
 
   <body>
