@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
+import CartButton from "@/components/CartButton";
 
 const links = [
   { label: "Menu", href: "#menu" },
@@ -32,6 +33,7 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+          <CartButton />
           <a
             href="tel:6132313010"
             className="bg-gradient-fire text-primary-foreground font-body font-semibold px-5 py-2 rounded-full text-sm hover:opacity-90 transition-opacity flex items-center gap-2"
@@ -41,14 +43,17 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-foreground"
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Mobile */}
+        <div className="md:hidden flex items-center gap-2">
+          <CartButton />
+          <button
+            onClick={() => setOpen(!open)}
+            className="text-foreground"
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile menu */}

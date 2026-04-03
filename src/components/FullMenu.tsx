@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Plus } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
+import { toast } from "sonner";
 
 import wholeChickenImg from "@/assets/menu-whole-chicken.jpg";
 import halfChickenImg from "@/assets/menu-half-chicken.jpg";
@@ -125,7 +127,19 @@ const menuData: MenuCategory[] = [
 
 const FullMenu = () => {
   const [activeCategory, setActiveCategory] = useState(0);
+  const { addItem } = useCart();
 
+  const parsePrice = (price: string) => parseFloat(price.replace("$", ""));
+
+  const handleAddToCart = (item: MenuItem) => {
+    addItem({
+      name: item.name,
+      nameFr: item.nameFr,
+      price: parsePrice(item.price),
+      image: item.image,
+    });
+    toast.success(`${item.name} ajouté au panier`);
+  };
   return (
     <section id="full-menu" className="py-24 bg-background">
       <div className="container mx-auto px-6">
@@ -226,9 +240,16 @@ const FullMenu = () => {
                       </p>
                     )}
                   </div>
-                  <span className="font-body font-bold text-primary text-base whitespace-nowrap">
+                  <span className="font-body font-bold text-primary text-base whitespace-nowrap mr-2">
                     {item.price}
                   </span>
+                  <button
+                    onClick={() => handleAddToCart(item)}
+                    className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:bg-primary/80 transition-colors flex-shrink-0"
+                    aria-label={`Add ${item.name} to cart`}
+                  >
+                    <Plus className="w-4 h-4" />
+                  </button>
                 </motion.div>
               ))}
             </div>
