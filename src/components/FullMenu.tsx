@@ -2,6 +2,22 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 
+import wholeChickenImg from "@/assets/menu-whole-chicken.jpg";
+import halfChickenImg from "@/assets/menu-half-chicken.jpg";
+import chickenLegImg from "@/assets/menu-chicken-leg.jpg";
+import friesImg from "@/assets/menu-fries.jpg";
+import jollofImg from "@/assets/menu-jollof.jpg";
+import saladImg from "@/assets/menu-salad.jpg";
+import attiekeImg from "@/assets/gallery-attieke.jpg";
+import plantainsImg from "@/assets/gallery-plantains.jpg";
+import skewersImg from "@/assets/gallery-skewers.jpg";
+import shrimpImg from "@/assets/gallery-shrimp.jpg";
+import sandwichImg from "@/assets/gallery-sandwich.jpg";
+import comboImg from "@/assets/menu-combo.jpg";
+import bissapImg from "@/assets/gallery-bissap.jpg";
+import gingerImg from "@/assets/menu-ginger-juice.jpg";
+import platterImg from "@/assets/menu-platter.jpg";
+
 const UBER_EATS_URL = "https://www.ubereats.com/ca/store/royal-chicken-bbq-197-rue-bank/";
 const PROMO_CODE = "eats-pxvn2akvxy";
 
@@ -10,47 +26,53 @@ type MenuItem = {
   nameFr?: string;
   price: string;
   description?: string;
+  image?: string;
 };
 
 type MenuCategory = {
   title: string;
+  categoryImage: string;
   items: MenuItem[];
 };
 
 const menuData: MenuCategory[] = [
   {
     title: "⭐ Featured",
+    categoryImage: platterImg,
     items: [
-      { name: "Whole Chicken", nameFr: "Poulet Entier", price: "$28.00", description: "Tender and juicy chicken smothered with a rich sauce" },
-      { name: "Half Chicken", nameFr: "Demi-poulet", price: "$16.95", description: "Tender smoky half chicken with a rich flavour" },
-      { name: "Fries", nameFr: "Frittes", price: "$11.50" },
+      { name: "Whole Chicken", nameFr: "Poulet Entier", price: "$28.00", description: "Tender and juicy chicken smothered with a rich sauce", image: wholeChickenImg },
+      { name: "Half Chicken", nameFr: "Demi-poulet", price: "$16.95", description: "Tender smoky half chicken with a rich flavour", image: halfChickenImg },
+      { name: "Fries", nameFr: "Frittes", price: "$11.50", image: friesImg },
     ],
   },
   {
     title: "🍗 Meats & Protein",
+    categoryImage: skewersImg,
     items: [
-      { name: "Whole Chicken", nameFr: "Poulet Entier", price: "$28.00", description: "Tender and juicy chicken smothered with a rich sauce" },
-      { name: "Half Chicken", nameFr: "Demi-poulet", price: "$16.95", description: "Tender smoky half chicken with a rich flavour" },
-      { name: "Chicken Leg", nameFr: "Cuisse de Poulet", price: "$11.25", description: "Juicy and tender chicken leg" },
-      { name: "(2) Beef Skewers", nameFr: "Brochettes de boeuf", price: "$14.95", description: "Tender beef skewers, marinated to perfection" },
-      { name: "(2) Chicken Skewers", nameFr: "Brochettes de Poulet", price: "$14.50", description: "Two skewers of seasoned chicken pieces, ready to enjoy" },
-      { name: "Jumbo Shrimp Skewer", price: "$14.50" },
+      { name: "Whole Chicken", nameFr: "Poulet Entier", price: "$28.00", description: "Tender and juicy chicken smothered with a rich sauce", image: wholeChickenImg },
+      { name: "Half Chicken", nameFr: "Demi-poulet", price: "$16.95", description: "Tender smoky half chicken with a rich flavour", image: halfChickenImg },
+      { name: "Chicken Leg", nameFr: "Cuisse de Poulet", price: "$11.25", description: "Juicy and tender chicken leg", image: chickenLegImg },
+      { name: "(2) Beef Skewers", nameFr: "Brochettes de boeuf", price: "$14.95", description: "Tender beef skewers, marinated to perfection", image: skewersImg },
+      { name: "(2) Chicken Skewers", nameFr: "Brochettes de Poulet", price: "$14.50", description: "Two skewers of seasoned chicken pieces, ready to enjoy", image: skewersImg },
+      { name: "Jumbo Shrimp Skewer", price: "$14.50", image: shrimpImg },
     ],
   },
   {
     title: "🥗 Side Dishes",
+    categoryImage: jollofImg,
     items: [
-      { name: "Fries", nameFr: "Frittes", price: "$11.50" },
-      { name: "Jollof Rice", nameFr: "Riz Jollof", price: "$11.50", description: "Rice made of spices for a savory, aromatic delight" },
-      { name: "Salad", nameFr: "Salade", price: "$11.50", description: "Fresh mixed greens with tomato, cucumber and red pepper" },
-      { name: "Attieke", nameFr: "Cassava Couscous", price: "$11.95", description: "Traditional West African dish made from cassava" },
-      { name: "Fried Plantains", nameFr: "Plantains fries", price: "$11.50", description: "Sliced plantain, crispy on the outside and tender within" },
+      { name: "Fries", nameFr: "Frittes", price: "$11.50", image: friesImg },
+      { name: "Jollof Rice", nameFr: "Riz Jollof", price: "$11.50", description: "Rice made of spices for a savory, aromatic delight", image: jollofImg },
+      { name: "Salad", nameFr: "Salade", price: "$11.50", description: "Fresh mixed greens with tomato, cucumber and red pepper", image: saladImg },
+      { name: "Attieke", nameFr: "Cassava Couscous", price: "$11.95", description: "Traditional West African dish made from cassava", image: attiekeImg },
+      { name: "Fried Plantains", nameFr: "Plantains fries", price: "$11.50", description: "Sliced plantain, crispy on the outside and tender within", image: plantainsImg },
     ],
   },
   {
     title: "🔥 Combos",
+    categoryImage: comboImg,
     items: [
-      { name: "Half Chicken & Plantain", nameFr: "Moitié Poulet & Plantains Frits", price: "$26.50" },
+      { name: "Half Chicken & Plantain", nameFr: "Moitié Poulet & Plantains Frits", price: "$26.50", image: comboImg },
       { name: "Half Chicken & Salad", nameFr: "Moitié poulet et salade", price: "$26.50" },
       { name: "Half Chicken & Fries", nameFr: "Moitié poulet & Frittes", price: "$26.50" },
       { name: "Half Chicken & Rice", nameFr: "Moitié Poulet & Riz", price: "$26.50" },
@@ -65,14 +87,16 @@ const menuData: MenuCategory[] = [
   },
   {
     title: "🥖 Sandwiches",
+    categoryImage: sandwichImg,
     items: [
-      { name: "Mix Chicken/Beef Baguette", nameFr: "Sandwich Baguette au poulet et boeuf", price: "$16.45", description: "Baguette filled with a combination of chicken and beef" },
-      { name: "Chicken Baguette", nameFr: "Sandwich Baguette au poulet", price: "$15.75", description: "Baguette filled with chicken, classic sandwich option" },
-      { name: "Beef Baguette", nameFr: "Sandwich Baguette au boeuf", price: "$15.99", description: "Baguette filled with sliced beef, classic option" },
+      { name: "Mix Chicken/Beef Baguette", nameFr: "Sandwich Baguette au poulet et boeuf", price: "$16.45", description: "Baguette filled with a combination of chicken and beef", image: sandwichImg },
+      { name: "Chicken Baguette", nameFr: "Sandwich Baguette au poulet", price: "$15.75", description: "Baguette filled with chicken, classic sandwich option", image: sandwichImg },
+      { name: "Beef Baguette", nameFr: "Sandwich Baguette au boeuf", price: "$15.99", description: "Baguette filled with sliced beef, classic option", image: sandwichImg },
     ],
   },
   {
     title: "🥤 Beverages",
+    categoryImage: bissapImg,
     items: [
       { name: "Water", price: "$1.80", description: "Pure and refreshing hydration" },
       { name: "Sprite", price: "$3.00" },
@@ -83,12 +107,13 @@ const menuData: MenuCategory[] = [
       { name: "Fanta Pineapple", nameFr: "Ananas", price: "$3.50" },
       { name: "Pepsi", price: "$3.00" },
       { name: "Fanta Strawberry", nameFr: "Fraise", price: "$3.50" },
-      { name: "Hibiscus Juice", nameFr: "Bissap", price: "$7.59", description: "Pure and refreshing hibiscus drink (Sorel)" },
-      { name: "Ginger Juice", nameFr: "Gnamakou", price: "$7.59", description: "Refreshing West African ginger juice" },
+      { name: "Hibiscus Juice", nameFr: "Bissap", price: "$7.59", description: "Pure and refreshing hibiscus drink (Sorel)", image: bissapImg },
+      { name: "Ginger Juice", nameFr: "Gnamakou", price: "$7.59", description: "Refreshing West African ginger juice", image: gingerImg },
     ],
   },
   {
     title: "🌶️ Extras",
+    categoryImage: platterImg,
     items: [
       { name: "Condiments", price: "$1.00", description: "Mix of tomatoes, onions & cucumbers" },
       { name: "In-House Hot Sauce", nameFr: "Sauce piquante", price: "$1.00", description: "A tangy sauce to add a bold kick" },
@@ -138,7 +163,7 @@ const FullMenu = () => {
           ))}
         </div>
 
-        {/* Menu items */}
+        {/* Menu items with category image */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeCategory}
@@ -146,8 +171,24 @@ const FullMenu = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
-            className="max-w-3xl mx-auto"
+            className="max-w-4xl mx-auto"
           >
+            {/* Category hero image */}
+            <div className="relative rounded-2xl overflow-hidden mb-8 aspect-[21/9]">
+              <img
+                src={menuData[activeCategory].categoryImage}
+                alt={menuData[activeCategory].title}
+                loading="lazy"
+                width={1200}
+                height={514}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-charcoal/20 to-transparent" />
+              <h3 className="absolute bottom-4 left-6 font-display text-2xl md:text-3xl font-bold text-white">
+                {menuData[activeCategory].title}
+              </h3>
+            </div>
+
             <div className="space-y-1">
               {menuData[activeCategory].items.map((item, i) => (
                 <motion.div
@@ -155,9 +196,22 @@ const FullMenu = () => {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.04 }}
-                  className="flex items-start justify-between gap-4 py-4 border-b border-border/20 group"
+                  className="flex items-center gap-4 py-4 border-b border-border/20 group"
                 >
-                  <div className="flex-1">
+                  {/* Item thumbnail */}
+                  {item.image && (
+                    <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        loading="lazy"
+                        width={64}
+                        height={64}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    </div>
+                  )}
+                  <div className="flex-1 min-w-0">
                     <h4 className="font-display text-base font-semibold text-foreground group-hover:text-primary transition-colors">
                       {item.name}
                     </h4>
@@ -167,7 +221,7 @@ const FullMenu = () => {
                       </span>
                     )}
                     {item.description && (
-                      <p className="font-body text-sm text-muted-foreground mt-1">
+                      <p className="font-body text-sm text-muted-foreground mt-1 truncate">
                         {item.description}
                       </p>
                     )}
