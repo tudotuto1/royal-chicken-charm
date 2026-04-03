@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
+import CartButton from "@/components/CartButton";
 
 const links = [
   { label: "Menu", href: "#menu" },
