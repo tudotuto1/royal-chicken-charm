@@ -33,6 +33,7 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+          <CartButton />
           <a
             href="tel:6132313010"
             className="bg-gradient-fire text-primary-foreground font-body font-semibold px-5 py-2 rounded-full text-sm hover:opacity-90 transition-opacity flex items-center gap-2"
