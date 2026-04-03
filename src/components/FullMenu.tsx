@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Plus } from "lucide-react";
+import { useCart } from "@/contexts/CartContext";
+import { toast } from "sonner";
 
 import wholeChickenImg from "@/assets/menu-whole-chicken.jpg";
 import halfChickenImg from "@/assets/menu-half-chicken.jpg";
