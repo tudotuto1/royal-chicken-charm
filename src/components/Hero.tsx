@@ -68,18 +68,18 @@ const Hero = () => {
           {/* CTA */}
           <div className="flex flex-wrap gap-4">
             <a
-              href="tel:6132313010"
-              className="bg-gradient-fire text-primary-foreground font-body font-semibold px-8 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-glow"
-            >
-              Order Now
-            </a>
-            <a
-              href="https://maps.google.com/?q=197+Bank+St+Ottawa+ON+K2P+0A6"
+              href="https://www.ubereats.com/ca/store/royal-chicken-bbq-197-rue-bank/"
               target="_blank"
               rel="noopener noreferrer"
+              className="bg-gradient-fire text-primary-foreground font-body font-semibold px-8 py-4 rounded-full text-lg hover:opacity-90 transition-opacity shadow-glow"
+            >
+              Order on Uber Eats
+            </a>
+            <a
+              href="tel:6132313010"
               className="border border-border text-foreground font-body font-semibold px-8 py-4 rounded-full text-lg hover:bg-secondary transition-colors"
             >
-              Get Directions
+              Call to Order
             </a>
           </div>
         </motion.div>
