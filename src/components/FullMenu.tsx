@@ -127,7 +127,19 @@ const menuData: MenuCategory[] = [
 
 const FullMenu = () => {
   const [activeCategory, setActiveCategory] = useState(0);
+  const { addItem } = useCart();
 
+  const parsePrice = (price: string) => parseFloat(price.replace("$", ""));
+
+  const handleAddToCart = (item: MenuItem) => {
+    addItem({
+      name: item.name,
+      nameFr: item.nameFr,
+      price: parsePrice(item.price),
+      image: item.image,
+    });
+    toast.success(`${item.name} ajouté au panier`);
+  };
   return (
     <section id="full-menu" className="py-24 bg-background">
       <div className="container mx-auto px-6">
