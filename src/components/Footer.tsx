@@ -20,8 +20,18 @@ const Footer = () => {
             </h4>
             <div className="space-y-3">
               <a href="#menu" className="block font-body text-sm text-muted-foreground hover:text-primary transition-colors">Menu</a>
+              <a href="#full-menu" className="block font-body text-sm text-muted-foreground hover:text-primary transition-colors">Full Menu</a>
+              <a href="#gallery" className="block font-body text-sm text-muted-foreground hover:text-primary transition-colors">Gallery</a>
               <a href="#hours" className="block font-body text-sm text-muted-foreground hover:text-primary transition-colors">Hours & Location</a>
               <a href="#reviews" className="block font-body text-sm text-muted-foreground hover:text-primary transition-colors">Reviews</a>
+              <a
+                href="https://www.ubereats.com/ca/store/royal-chicken-bbq-197-rue-bank/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block font-body text-sm text-primary font-semibold hover:text-primary/80 transition-colors"
+              >
+                Order on Uber Eats →
+              </a>
             </div>
           </div>
 
