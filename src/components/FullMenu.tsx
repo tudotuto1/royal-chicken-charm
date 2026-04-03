@@ -240,9 +240,16 @@ const FullMenu = () => {
                       </p>
                     )}
                   </div>
-                  <span className="font-body font-bold text-primary text-base whitespace-nowrap">
+                  <span className="font-body font-bold text-primary text-base whitespace-nowrap mr-2">
                     {item.price}
                   </span>
+                  <button
+                    onClick={() => handleAddToCart(item)}
+                    className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:bg-primary/80 transition-colors flex-shrink-0"
+                    aria-label={`Add ${item.name} to cart`}
+                  >
+                    <Plus className="w-4 h-4" />
+                  </button>
                 </motion.div>
               ))}
             </div>
