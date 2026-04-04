@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import CartButton from "@/components/CartButton";
 
 const links = [
@@ -10,10 +11,22 @@ const links = [
   { label: "Hours", href: "#hours" },
   { label: "Reviews", href: "#reviews" },
   { label: "Contact", href: "#contact" },
+  { label: "Aide", href: "/help" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLinkClick = (href: string) => {
+    setOpen(false);
+    if (href.startsWith("/")) {
+      navigate(href);
+    } else {
+      const el = document.querySelector(href);
+      el?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-charcoal/80 backdrop-blur-lg border-b border-border/30">
@@ -25,13 +38,13 @@ const Navbar = () => {
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
-            <a
+            <button
               key={link.label}
-              href={link.href}
-              className="font-body text-sm text-muted-foreground hover:text-primary transition-colors"
+              onClick={() => handleLinkClick(link.href)}
+              className="font-body text-sm text-muted-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer"
             >
               {link.label}
-            </a>
+            </button>
           ))}
           <CartButton />
           <a
@@ -67,14 +80,13 @@ const Navbar = () => {
           >
             <div className="px-6 py-4 space-y-4">
               {links.map((link) => (
-                <a
+                <button
                   key={link.label}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="block font-body text-foreground hover:text-primary transition-colors"
+                  onClick={() => handleLinkClick(link.href)}
+                  className="block font-body text-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer text-left w-full"
                 >
                   {link.label}
-                </a>
+                </button>
               ))}
               <a
                 href="tel:6132313010"

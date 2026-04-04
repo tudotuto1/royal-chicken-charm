@@ -9,6 +9,7 @@ import Index from "./pages/Index.tsx";
 import Checkout from "./pages/Checkout.tsx";
 import OrderConfirmation from "./pages/OrderConfirmation.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import HelpCenter from "./pages/HelpCenter.tsx";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/order-confirmation/:orderId" element={<OrderConfirmation />} />
+            <Route path="/help" element={<HelpCenter />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
