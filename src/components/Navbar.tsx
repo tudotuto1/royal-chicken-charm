@@ -10,6 +10,7 @@ const links = [
   { label: "Hours", href: "#hours" },
   { label: "Reviews", href: "#reviews" },
   { label: "Contact", href: "#contact" },
+  { label: "Aide", href: "/help" },
 ];
 
 const Navbar = () => {

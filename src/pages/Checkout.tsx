@@ -69,6 +69,25 @@ const Checkout = () => {
       const { error: itemsError } = await supabase.from("order_items").insert(orderItems);
       if (itemsError) throw itemsError;
 
+      // Send email notification (fire-and-forget)
+      supabase.functions.invoke("send-notification", {
+        body: {
+          type: "order",
+          customerName: form.name.trim(),
+          customerPhone: form.phone.trim(),
+          customerEmail: form.email.trim(),
+          orderType: form.orderType,
+          deliveryAddress: form.orderType === "delivery" ? form.address.trim() : "",
+          notes: form.notes.trim(),
+          totalAmount: totalPrice,
+          items: items.map((item) => ({
+            name: item.name,
+            quantity: item.quantity,
+            subtotal: item.price * item.quantity,
+          })),
+        },
+      }).catch(console.error);
+
       clearCart();
       navigate(`/order-confirmation/${order.id}`);
     } catch (err) {
