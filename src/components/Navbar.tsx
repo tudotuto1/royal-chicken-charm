@@ -80,14 +80,13 @@ const Navbar = () => {
           >
             <div className="px-6 py-4 space-y-4">
               {links.map((link) => (
-                <a
+                <button
                   key={link.label}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="block font-body text-foreground hover:text-primary transition-colors"
+                  onClick={() => handleLinkClick(link.href)}
+                  className="block font-body text-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer text-left w-full"
                 >
                   {link.label}
-                </a>
+                </button>
               ))}
               <a
                 href="tel:6132313010"
