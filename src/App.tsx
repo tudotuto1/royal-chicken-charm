@@ -9,6 +9,7 @@ import Index from "./pages/Index.tsx";
 import Checkout from "./pages/Checkout.tsx";
 import OrderConfirmation from "./pages/OrderConfirmation.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import HelpCenter from "./pages/HelpCenter.tsx";
 
 const queryClient = new QueryClient();
 
