@@ -38,13 +38,13 @@ const Navbar = () => {
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
-            <a
+            <button
               key={link.label}
-              href={link.href}
-              className="font-body text-sm text-muted-foreground hover:text-primary transition-colors"
+              onClick={() => handleLinkClick(link.href)}
+              className="font-body text-sm text-muted-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer"
             >
               {link.label}
-            </a>
+            </button>
           ))}
           <CartButton />
           <a
