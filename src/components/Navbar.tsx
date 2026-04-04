@@ -16,6 +16,17 @@ const links = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLinkClick = (href: string) => {
+    setOpen(false);
+    if (href.startsWith("/")) {
+      navigate(href);
+    } else {
+      const el = document.querySelector(href);
+      el?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-charcoal/80 backdrop-blur-lg border-b border-border/30">
