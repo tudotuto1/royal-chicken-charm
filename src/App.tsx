@@ -20,7 +20,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <CartDrawer />
-       <BrowserRouter basename="/royal-chicken-charm/">
+       <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/checkout" element={<Checkout />} />
